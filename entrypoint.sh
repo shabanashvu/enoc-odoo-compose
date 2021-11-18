@@ -16,6 +16,8 @@ pip3 install requests
 pip3 install requests_oauthlib 
 pip3 install pip --upgrade
 pip3 install -r /etc/odoo/requirements.txt
+ENV TZ=Asia/Dubai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # sed -i 's|raise werkzeug.exceptions.BadRequest(msg)|self.jsonrequest = {}|g' /usr/lib/python3/dist-packages/odoo/http.py
 
