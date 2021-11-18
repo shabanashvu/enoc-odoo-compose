@@ -12,7 +12,7 @@ services:
 #        - ./postgresql:/var/lib/postgresql/data
 
   odoo14:
-    image: odoo:14
+    image: shabanash/odoo-enoc
     user: root
     ports:
       - "10014:8069"
