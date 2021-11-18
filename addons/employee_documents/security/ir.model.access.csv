@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_document_type,document.type,model_document_type,hr.group_hr_user,1,1,1,1
+access_certificate_master,certificate.master,model_certificate_master,hr.group_hr_user,1,1,1,1
+access_attach_details,attach.details,model_attach_details,hr.group_hr_user,1,1,1,1
+access_employee_certification,employee.certification,model_employee_certification,hr.group_hr_user,1,1,1,1

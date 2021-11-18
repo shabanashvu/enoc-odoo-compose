@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="assets_backend" name="user_recent_log assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/user_recent_log/static/src/js/custom_rpc.js"></script>
+            <script type="text/javascript" src="/user_recent_log/static/src/js/user_menu_custom.js"></script>
+            <script type="text/javascript" src="/user_recent_log/static/src/js/action_manager.js"></script>
+            </xpath>
+        </template>
+</odoo>

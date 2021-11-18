@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="UserMenu.Actions">
+        <t t-jquery=".dropdown-divider" t-operation="after">
+            <a role="menuitem" href="#" data-menu="activity" class="dropdown-item">Recent Logs</a>
+        </t>
+    </t>
+</templates>

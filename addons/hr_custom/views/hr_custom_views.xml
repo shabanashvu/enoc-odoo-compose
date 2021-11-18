@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> 
+            
+        <record model="ir.ui.view" id="attendance_overtime_data_view">
+            <field name="name">overtime.data.form</field>
+            <field name="model">overtime.data</field>
+            <field name="arch" type="xml">
+                <tree string="Overtime Data" editable="top">
+                       <field name="emp_id" />
+                       <field name="date_work" />
+                       <field name="total_hrs" widget="float_time"/>
+                       <field name="total_overtime" widget="float_time"/>
+                       <field name="special_overtime" widget="float_time"/>
+                       <field name="holiday_hrs" widget="float_time"/>
+                       <field name="gloal_hrs" widget="float_time"/>
+                       <field name="to_be_added" />
+                       <field name="state"/>
+                       <button string="Checkin/Checkout Details" name="action_show_attendances" type="object" icon="fa-arrow-right" groups="hr_holidays.group_hr_holidays_user"/>
+                       <button string="Recalculate" name="action_recalculate" type="object" icon="fa-arrow-right" groups="hr_holidays.group_hr_holidays_user"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="hrovertime_data_search">
+			<field name="name">Overtime Data</field>
+			<field name="model">overtime.data</field>
+			<field name="arch" type="xml">
+				<search string="Employees">
+                    <field name="state" string="Status" filter_domain="[]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_state" string="Status" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+			</field>
+		</record>
+        
+        
+        
+        <record id="action_view_overtime_data1" model="ir.actions.act_window">
+            <field name="name">Overtime Data</field>
+            <field name="res_model">overtime.data</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="attendance_overtime_data_view"/>
+            <field name="search_view_id" ref="hrovertime_data_search"/>
+            <field name="target">new</field>
+        </record>
+        
+        <record id="action_view_attendace_all" model="ir.actions.act_window">
+            <field name="name">Approved Attendances</field>
+            <field name="res_model">overtime.data</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('state','=','approved')]</field>
+            <field name="view_id" ref="attendance_overtime_data_view"/>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem
+            id="menu_action_attendance_all"
+            name="Approved Attendances"
+            action="action_view_attendace_all"
+            parent="hr_attendance.menu_hr_attendance_manage_attendances"
+            groups="hr_attendance.group_hr_attendance_user"
+            sequence="12"/>
+        
+        <record model="ir.actions.server" id="action_attendance_approval_r2">
+	        <field name="name"> Approve All</field>
+	        <field name="model_id" ref="model_overtime_data"/>
+	        <field name="binding_model_id" ref="model_overtime_data" />
+	        <field name="groups_id" eval="[(4, ref('group_r2_approver'))]"/>
+	        <field name="state">code</field>
+	        <field name="code">
+	            for rec in  records:
+	                rec.action_approve()
+		    </field>
+	    </record>
+	    
+	    <record model="ir.actions.server" id="action_attendance_recalculate">
+	        <field name="name"> Recalculate</field>
+	        <field name="model_id" ref="model_overtime_data"/>
+	        <field name="binding_model_id" ref="model_overtime_data" />
+	        <field name="groups_id" eval="[(4, ref('group_r2_approver','group_r1_approver'))]"/>
+	        <field name="state">code</field>
+	        <field name="code">
+	            for rec in  records:
+	                rec.action_recalculate_all()
+		    </field>
+	    </record>
+	    
+	    <record model="ir.actions.server" id="action_attendance_approval_r1">
+	        <field name="name">R1 Approve</field>
+	        <field name="model_id" ref="model_overtime_data"/>
+	        <field name="binding_model_id" ref="model_overtime_data" />
+	        <field name="groups_id" eval="[(4, ref('group_r1_approver'))]"/>
+	        <field name="state">code</field>
+	        <field name="code">
+	            for rec in  records:
+	                rec.action_r2_approve()
+		    </field>
+	    </record>
+        
+    	<record id="view_hr_custom_employee_badge" model="ir.ui.view">
+            <field name="name">hr.employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_gamification.hr_hr_employee_view_form"/>
+            <field name="arch" type="xml">
+         		<button name="%(hr_gamification.action_reward_wizard)d" position="replace"> 
+                </button>    
+         	</field>
+        </record>
+        
+        <record id="view_hr_custom_employee_holiday" model="ir.ui.view">
+            <field name="name">hr.employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_holidays.view_employee_form_leave_inherit"/>
+            <field name="arch" type="xml">
+         		<field name="leave_manager_id" position="attributes">
+					<attribute name="string">Leave</attribute>
+         		</field>
+         		<field name="leave_manager_id" position="after">
+         		<field name="parent_id" string ="R1 Approver" required="1"></field>
+         		<field name="project_manager_id" required="1"></field>
+         		</field>
+         	</field>
+        </record>
+    	
+    	<record id="view_hr_custom_employee_inherit" model="ir.ui.view">
+            <field name="name">hr.employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+            	 <xpath expr="//field[@name='parent_id']" position="after">
+					<field name="user_id"></field>
+					<field name="citizenship" required ="1"/>
+					<field name="job_id"></field>
+					<field name="registration_number" string ="Employee ID"></field>
+					<field name="emp_type" widget ="radio"></field>
+				</xpath>
+				<field name="passport_id" position="replace"/>
+				<field name="company_id" position="after">
+					<field name="state"></field>
+				</field>
+				<xpath expr="//group[@name='active_group']/field[@name='job_id']" position="replace">
+				</xpath>
+				<!-- <xpath expr="//field[@name='tz']/" position="after">
+					<field name="schedule_id"></field>
+				</xpath> -->
+				<field name="tz" position="after">
+					<field name="schedule_id"></field>
+				</field>
+				<xpath expr="//group[@name='active_group']/field[@name='registration_number']" position="replace">
+				</xpath>
+				<!-- <xpath expr="//group[@name='active_group']" position="replace">
+				</xpath>  -->
+				<xpath expr="//field[@name='parent_id']" position="replace">
+				</xpath> 
+				<xpath expr="//field[@name='coach_id']" position="replace">
+				</xpath> 
+				<xpath expr="//field[@name='department_id']" position="replace">
+					<field name="department_id" required ="1"></field>
+				</xpath>
+				<xpath expr="//field[@name='state']" position="replace">
+					<field name="state" required ="1"></field>
+				</xpath>
+				<xpath expr="//page[@name='personal_information']" position="attributes">
+					<attribute name="groups">hr_custom.group_private_data</attribute>
+				</xpath>
+				<xpath expr="//page[@name='public']/div/div/group[4]" position="after">
+					<group string ="Supplier">
+						<field name="supplier_id" context="{'res_partner_search_mode': 'supplier', 'show_vat': True}" ></field>
+						<!-- <field name="image_emp_show" widget="image" class="oe_avatar" /><newline/> -->
+					</group>
+					<group string ="Joining date">
+						<field name="joining_date" ></field>
+					</group>
+					<group string ="Leaving date">
+						<field name="leaving_date" ></field>
+					</group>
+				</xpath>
+				<xpath expr="//page[@name='personal_information']/group/group[1]" position="before">
+					<group string="Work Permit" name="work_permit">
+                        <field name="visa_no"/>
+                        <field name="permit_no"/>
+                        <field name="visa_expire"/>
+                    </group>
+                    <group string="Passport Deails" name="work_permit">
+                        <field name="passport_id"/>
+                        <field name="passport_expiry"/>
+                        <field name="passport_country"/>
+                    </group>
+                    <group string="Insurance Details" name="work_permit">
+                        <field name="insurance_no"/>
+                        <field name="insurance_cmp"/>
+                        <field name="insurance_expiry"/>
+                    </group>
+                    <group string="Emirates Id Details" name="work_permit">
+                        <field name="eid_no"/>
+                        <field name="eid_expiry"/>
+                    </group>
+				</xpath>
+				
+				<xpath expr="//page[@name='personal_information']/group/group[7]" position="after">
+	                        <group string="Transportation">
+	                            <field name="transportation_id"/>
+	                            <field name="pickup_point"/>
+	                            <field name="land_mark"/>
+	                        </group>
+	                        <group string="Accommodation">
+	                            <field name="accomadtion_id"/>
+	                            <field name="room_no"/>
+	                        </group>
+	                        <group string="Telephone">
+	                            <field name="telephone_id"/>
+	                        </group>
+				</xpath>
+				<xpath expr="//page[@name='personal_information']/group/group[6]" position="replace">
+				</xpath>
+				<xpath expr="//page[@name='personal_information']/group" position="before">
+					<field name="facilitates_line">
+	                        <tree string="Facilitates" editable="top">
+	                            <field name="entitlement_id"  />
+	                           <!--  <field name='asset_id'  /> -->
+	                            <field name="ref"/>
+	                            <field name="from_date"/>
+	                        </tree>
+                      	</field>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']/group/group[5]" position="replace">
+                </xpath>
+            	<xpath expr="//page[@name='personal_information']" position="after">
+					<page string="Emergency Contact" groups="hr_custom.group_emergency">
+						<group>
+							<group string="Emergency Contact 1">
+                                <field name="e_c1_name"/>
+                                <field name="e_c1_relationship"/>
+                                <field name="e_c1_street"/>
+                                <field name="e_c1_street2"/>
+
+                                <field name="e_c1_state_id"/>
+                                <field name="e_c1_city"/>
+                                <field name="e_c1_country_id"/>
+                                <field name="e_c1_ph1"/>
+                                <field name="e_c1_ph2"/>
+							</group>
+							<group string="Emergency Contact 2">
+                                <field name="e_c2_name"/>
+                                <field name="e_c2_relationship"/>
+                                <field name="e_c2_street"/>
+                                <field name="e_c2_street2"/>
+
+                                <field name="e_c2_state_id"/>
+                                <field name="e_c2_city"/>
+                                <field name="e_c2_country_id"/>
+                                <field name="e_c2_ph1"/>
+                                <field name="e_c2_ph2"/>
+							</group>
+						</group>
+						<group>
+							<group string="Medical Contact &amp; History">
+                                <field name="mc_dr_name"/>
+                                <field name="mc_street"/>
+                                <field name="mc_street2"/>
+                                <field name="mc_state_id"/>
+
+                                <field name="mc_city"/>
+                                <field name="mc_country_id"/>
+                                <field name="mc_ph1"/>
+                                <field name="mc_ph2"/>
+                                <field name="mc_blogroup"/>
+
+                                <field name="mc_medical_conditions"/>
+                                <field name="mc_allergies"/>
+                                <field name="mc_medications"/>
+							</group>
+							<group>
+							</group>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="//page[@name='hr_settings']" position="after">
+                	<page string="Leave History" groups="hr.group_hr_user">
+						<group>
+							<div>
+								<button name="compute_leave_eligible_employee_master" type="object" string="Leave Eligible Compute" class="oe_link"/>
+							</div>
+						</group>
+                        <field name="leave_history_line" readonly="1">
+                        </field>
+                    </page>
+                    <page string="Dependents" groups="hr.group_hr_user">
+                        <field name="dependents_line">
+                            <tree editable="top">
+                                <field name="contacts" required="1"/>
+                                <field name="relation_id"/>
+								<field name="benefits_ids" widget="many2many_tags"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Education">
+                        <field name="education_line">
+                            <tree editable="top">
+                                <field name="academic_qualification_id"/>
+                                <field name="instituite"/>
+                                <field name="year"/>
+                                <field name="country_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Launguage">
+                        <field name="launguage_line">
+                            <tree editable="top">
+                                <field name="launguage_id"/>
+                                <field name="speak"/>
+                                <field name="reads"/>
+                                <field name="writes"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Beneficiary">
+                        <field name="beneficiary_line">
+                            <tree editable="top">
+                                <field name="contacts"/>
+                                <field name="relation_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Job Histroy">
+	                    <field name="job_role_line" nolabel="1">
+	                    	<tree editable="bottom">
+	                    		<field name="date_from" />
+	                    		<field name="date_to" />
+	                    		<field name="job_id" />
+	                    		<field name="name" />
+	                    	</tree>
+	                    </field>
+                    </page>
+                    <page name="family_info" string="Family Information">
+                        <group string="Family">
+                            <field name="fam_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="member_name"/>
+                                    <field name="relation"/>
+                                    <field name="member_contact"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="mob_access" string="Mobile Aceess">
+                        <group colspan="4" col="4">
+                                    <field name="active_state" widget ="radio"/><newline/>
+                                    <field name="user_type" widget ="radio"/><newline/>
+                                    <field name="uname"/>
+                                    <field name="password" password="True"/>
+                        </group>
+                    </page>
+                </xpath>
+			</field>
+    	</record>
+    	
+    	<!-- <record model="ir.ui.view" id="attendance_schedule_details_view">
+            <field name="name">schedule.details.form</field>
+            <field name="model">schedule.details</field>
+            <field name="arch" type="xml">
+                <tree string="Schedule Details" editable="top">
+                       <field name="name" />
+                       <field name="hrs" widget="float_time"/>
+                       <field name="weekly_off"/>
+                </tree>
+            </field>
+        </record> -->
+        
+        <record model="ir.ui.view" id="attendance_schedule_details_view">
+            <field name="name">schedule.details.form</field>
+            <field name="model">schedule.details</field>
+            <field name="arch" type="xml">
+                <tree string="Schedule Details" editable="top">
+                       <field name="name" />
+                       <field name="hrs" widget="float_time"/>
+                       <field name="overtime" widget="float_time"/>
+                       <field name="special_ot" widget="float_time"/>
+                       <field name="weekly_off"/>
+                       <field name="week_days"/>
+                </tree>
+           </field>
+       </record>
+          
+        
+        <record id="action_view_schedule_details" model="ir.actions.act_window">
+            <field name="name">Schedule Details</field>
+            <field name="res_model">schedule.details</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="attendance_schedule_details_view"/>
+            <field name="target">current</field>
+        </record>
+        
+         <menuitem
+            id="menu_action_schedule_details"
+            name="Schedule Details"
+            action="action_view_schedule_details"
+            parent="hr_attendance.menu_hr_attendance_settings"
+            groups="hr_attendance.group_hr_attendance_user"/>
+        
+        <record id="res_config_settings_view_form_new" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.schedular</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="80"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <div data-string="Attendances" position="inside"> 
+                    <h2>Schedular Time Interval</h2>
+                    <div class="row mt16 o_settings_container" name="schedular_container">
+                        <div class="col-12 col-lg-6 o_setting_box" title="Schedular Time Interval">
+                            <label for="schedular_time" string="Schedular Time Interval" class="col-lg-3 o_light_label" />
+                             
+                             <field name="schedular_time" style="width: 40px;" widget="float_time"/>
+                        </div>
+                    </div>
+                </div>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="employee_schedule_details_view">
+            <field name="name">employee.schedule.form</field>
+            <field name="model">employee.schedule</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Schedule" editable="top">
+                       <field name="name" />
+                       <field name="emp_id" />
+                       <field name="month_id"/>
+                       <field name="year_id" />
+                       <field name="working_hrs" widget="float_time"/>
+                       <field name="overtime" widget="float_time" />
+                       <field name="special_ot" widget="float_time"/>
+                       <field name="weekly_off"/>
+                       <field name="week_days"/>
+                </tree>
+           </field>
+       </record>
+          
+        
+        <record id="action_view_employee_schedule" model="ir.actions.act_window">
+            <field name="name">Employee Schedule Details</field>
+            <field name="res_model">employee.schedule</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="employee_schedule_details_view"/>
+            <field name="target">current</field>
+        </record>
+        
+         <menuitem
+            id="menu_action_employee_schedule_details"
+            name="Employee Schedule Details"
+            action="action_view_employee_schedule"
+            parent="hr_attendance.menu_hr_attendance_settings"
+            groups="hr_attendance.group_hr_attendance_user"/>
+            
+         <record id="inherited_view_attendance_hr_custom" model="ir.ui.view">
+            <field name="name">hr.attendance.tree.inherited</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+            <field name="arch" type="xml">
+            	<field name="employee_id" position="replace">
+	                        	<field name="employee_id" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
+	                        </field>
+	                        <field name="check_in" position="replace">
+	                        	<field name="check_in" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
+	                        </field>
+	                        <field name="check_out" position="replace">
+	                        	<field name="check_out" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
+	                        </field>
+                <field name="worked_hours" position="after">
+                		<field name="total_overtime" widget="float_time" sum="total_total_overtime"/>
+                       <field name="special_overtime" widget="float_time" sum="total_special_overtime"/>
+                       <field name="gloal_hrs" widget="float_time" sum="total_gloal_hrs"/>
+                       <field name="holiday_hrs" widget="float_time" sum="total_holiday_hrs"/>
+                        <field name="diff" widget="float_time" sum="total_diff"/>
+                       <field name="state"  readonly="1"/>
+                </field>
+                <field name="worked_hours" position="attributes">
+                	<attribute name="sum">total_worked_hours</attribute>
+                </field>
+            </field>
+        </record>
+        
+         <record id="hr_attendance_view_form_new" model="ir.ui.view">
+	        <field name="name">hr.attendance.form</field>
+	        <field name="model">hr.attendance</field>
+	        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+	        <field name="arch" type="xml">
+	                        <field name="employee_id" position="replace">
+	                        	<field name="employee_id" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
+	                        </field>
+	                        <field name="check_in" position="replace">
+	                        	<field name="check_in" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
+	                        </field>
+	                        <field name="check_out" position="replace">
+	                        	<field name="check_out" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
+	                        </field>
+	                        <field name="check_out" position="after">
+	                        	<field name="state" readonly="1"/>
+	                        </field>
+	                        
+	        </field>
+   		 </record>
+   		 
+   		 <record model="ir.actions.server" id="action_attendance_recalculate">
+	        <field name="name">Recalculate Attendances</field>
+	        <field name="model_id" ref="model_hr_attendance"/>
+	        <field name="binding_model_id" ref="model_hr_attendance" />
+	        <!-- <field name="groups_id" eval="[(4, ref('group_r2_approver'))]"/> -->
+	        <field name="state">code</field>
+	        <field name="code">
+	            for rec in  records:
+	                rec.action_recalculate()
+		    </field>
+	    </record>
+   		 
+   		 
+        
+    </data>
+</odoo>

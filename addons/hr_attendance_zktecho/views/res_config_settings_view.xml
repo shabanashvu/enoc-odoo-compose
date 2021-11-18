@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+		<record id="inherited_res_config_settings_view_form"
+			model="ir.ui.view">
+			<field name="name">res.config.settings.view.form.inherit</field>
+			<field name="model">res.config.settings</field>
+			<field name="inherit_id"
+				ref="hr_attendance.res_config_settings_view_form" />
+			<field name="arch" type="xml">
+				<div data-string="Attendances" position="inside">
+					<h2>Duplicate &amp; Multiple Punches</h2>
+					<div class="row mt16 o_settings_container" name="dup_bunches">
+						<div class="col-md-16 o_setting_box">
+							<div class="o_setting_right_pane">
+								<span class="o_form_label">Do not fetch multiple punches within</span>
+								<field name="duplicate_punches_seconds" style="width: 40px;"/>
+								<span class="o_form_label">seconds</span>
+								<div class="text-muted">
+									The time in which multiple attendance punches aren't
+									fetched/ignored
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</field>
+		</record>
+	</data>
+</odoo>

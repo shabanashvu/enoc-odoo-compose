@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_hr_attendance_report_parent" name="Reporting" parent="hr_attendance.menu_hr_attendance_root" sequence="35"
+              groups="hr_attendance.group_hr_attendance_user"/>
+
+    <record id="hr_attendance.menu_hr_attendance_report" model="ir.ui.menu">
+        <field name="name">Attendance Analysis</field>
+        <field name="parent_id" ref="hr_attendance_report.menu_hr_attendance_report_parent"/>
+    </record>
+
+
+    <record id="hr_attendance_report_xls_form" model="ir.ui.view">
+        <field name="name">hr.attendance.report.xls.form</field>
+        <field name="model">hr.attendance.report.xls</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Excel Report">
+                <group>
+                    <group>
+                        <field name="from_date"/>
+                        <field name="department" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="rmanagers" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="state"/>
+                        <field name="employee_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="to_date"/>
+                        <field name="suppliers" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="rmanagers2" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="employee_status"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_generate_xls" string="Generate" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_overtime_report_xls_form" model="ir.ui.view">
+        <field name="name">hr.overtime.report.xls.form</field>
+        <field name="model">hr.overtime.report.xls</field>
+        <field name="arch" type="xml">
+            <form string="Overtime Excel Report">
+                <group>
+                    <group>
+                        <field name="from_date"/>
+                        <field name="department" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="rmanagers" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="state"/>
+                        <field name="employee_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="to_date"/>
+                        <field name="suppliers" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="rmanagers2" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="employee_status"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_generate_xls" string="Generate" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_special_overtime_report_xls_form" model="ir.ui.view">
+        <field name="name">hr.special.overtime.report.xls.form</field>
+        <field name="model">hr.special.overtime.report.xls</field>
+        <field name="arch" type="xml">
+            <form string="Special Overtime Excel Report">
+                <group>
+                    <group>
+                        <field name="from_date"/>
+                        <field name="department" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="rmanagers" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="state"/>
+                        <field name="employee_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="to_date"/>
+                        <field name="suppliers" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="rmanagers2" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="employee_status"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_generate_xls" string="Generate" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_detailed_attendance_report_xls_form" model="ir.ui.view">
+        <field name="name">hr.detailed.attendance.report.xls.form</field>
+        <field name="model">hr.detailed.attendance.report.xls</field>
+        <field name="arch" type="xml">
+            <form string="Detailed Attendance Excel Report">
+                <group>
+                    <group>
+                        <field name="month_id"/>
+                        <field name="department" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="rmanagers" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="state"/>
+                        <field name="employee_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="year_id"/>
+                        <field name="suppliers" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="rmanagers2" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="employee_status"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_generate_xls" string="Generate" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_attendance_report_xls_action" model="ir.actions.act_window">
+        <field name="name">Attendance Report Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.attendance.report.xls</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hr_attendance_report_xls_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="hr_overtime_report_xls_action" model="ir.actions.act_window">
+        <field name="name">Overtime Report Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.overtime.report.xls</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hr_overtime_report_xls_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="hr_special_overtime_report_xls_action" model="ir.actions.act_window">
+        <field name="name">Special Overtime Report Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.special.overtime.report.xls</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hr_special_overtime_report_xls_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="hr_detailed_attendance_report_xls_action" model="ir.actions.act_window">
+        <field name="name">Detailed Attendance Report Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.detailed.attendance.report.xls</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hr_detailed_attendance_report_xls_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_hr_attendance_report_xls" name="Attendance Excel Report"
+              parent="hr_attendance_report.menu_hr_attendance_report_parent" sequence="35"
+              groups="hr_attendance.group_hr_attendance_user" action="hr_attendance_report.hr_attendance_report_xls_action"/>
+
+    <menuitem id="menu_hr_overtime_report_xls" name="Overtime Excel Report"
+              parent="hr_attendance_report.menu_hr_attendance_report_parent" sequence="40"
+              groups="hr_attendance.group_hr_attendance_user" action="hr_attendance_report.hr_overtime_report_xls_action"/>
+
+    <menuitem id="menu_hr_special_overtime_report_xls" name="Special Overtime Excel Report"
+              parent="hr_attendance_report.menu_hr_attendance_report_parent" sequence="45"
+              groups="hr_attendance.group_hr_attendance_user" action="hr_attendance_report.hr_special_overtime_report_xls_action"/>
+
+    <menuitem id="menu_hr_detailed_attendance_report_xls" name="Detailed Attendance Excel Report"
+              parent="hr_attendance_report.menu_hr_attendance_report_parent" sequence="50"
+              groups="hr_attendance.group_hr_attendance_user" action="hr_attendance_report.hr_detailed_attendance_report_xls_action"/>
+
+</odoo>

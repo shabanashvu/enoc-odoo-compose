@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    Copyright (c) 2017-today MuK IT GmbH.
+
+    This file is part of MuK REST API for Odoo
+    (see https://mukit.at).
+
+    MuK Proprietary License v1.0
+
+    This software and associated files (the "Software") may only be used
+    (executed, modified, executed after modifications) if you have
+    purchased a valid license from MuK IT GmbH.
+
+    The above permissions are granted for a single database per purchased
+    license. Furthermore, with a valid license it is permitted to use the
+    software on other databases as long as the usage is limited to a testing
+    or development environment.
+
+    You may develop modules based on the Software or that use the Software
+    as a library (typically by depending on it, importing it and using its
+    resources), but without copying any source code or material from the
+    Software. You may distribute those modules under the license of your
+    choice, provided that this license is compatible with the terms of the
+    MuK Proprietary License (For example: LGPL, MIT, or proprietary licenses
+    similar to this one).
+
+    It is forbidden to publish, distribute, sublicense, or sell copies of
+    the Software or modified copies of the Software.
+
+    The above copyright notice and this permission notice must be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+    DEALINGS IN THE SOFTWARE.
+
+-->
+
+<odoo noupdate="1">
+
+	<record id="demo_rest_endpoint_01" model="muk_rest.endpoint">
+	    <field name="name">Get all Companies</field>
+	    <field name="endpoint">contacts/companies</field>
+	    <field name="model_id" ref="base.model_res_partner"/>
+	    <field name="method">GET</field>
+	    <field name="state">domain</field>
+	    <field name="protected" eval="False"/>
+	    <field name="eval_sudo" eval="True"/>
+	    <field name="domain">[["is_company","=",True]]</field>
+	    <field name="domain_field_ids" eval="[(6, 0, [ref('base.field_res_partner__name')])]"/>
+	    <field name="docs_summary">All Companies</field>
+	    <field name="docs_description">Get a list of company names.</field>
+	    <field name="docs_parameters">[{
+	"name": "limit",
+	"in": "query",
+	"description": "Limit",
+	"schema": {"type": "integer"}
+}, {
+	"name": "offset",
+	"in": "query",
+	"description": "Offset",
+	"schema": {"type": "integer"}
+}]
+		</field>
+	    <field name="docs_default_response_200" eval="False"/>
+	    <field name="docs_responses">{
+	"200": {
+		"description": "Company List", 
+		"content": {
+			"application/json": {
+				"schema": {
+				"$ref": "#/components/schemas/CustomCompanyNameList"
+				},
+				"example": ["MyCompany"]
+			}
+		}
+	}
+}			</field>
+	    <field name="docs_components">{
+	"CustomCompanyNameList": {
+		"properties": {
+			"domain": {
+				"type": "array",
+				"items": {
+					"anyOf": [{
+						"type": "string"
+					}, {
+						"type": "array",
+						"items": {
+							"anyOf": [{
+								"type": "string"
+							}, {
+								"type": "number"
+							}, {
+								"type": "boolean"
+							}, {
+								"type": "array",
+								"items": {
+									"anyOf": [{
+										"type": "string"
+									}, {
+										"type": "number"
+									}]
+								}
+							}]
+						},
+						"minItems": 3,
+						"maxItems": 3
+					}]
+				}
+			},
+			"fields": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"endpoint": {
+				"type": "string"
+			},
+			"model": {
+				"type": "string"
+			},
+			"result": {
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"name": {
+						"type": "string"
+						},
+						"id": {
+						"type": "integer"
+						}
+					}
+				}
+			}
+		}
+	}
+}		</field>
+	</record>
+
+	<record id="demo_rest_endpoint_02" model="muk_rest.endpoint">
+	    <field name="name">Create new Partner</field>
+	    <field name="endpoint">contacts/create</field>
+	    <field name="model_id" ref="base.model_res_partner"/>
+	    <field name="method">POST</field>
+	    <field name="state">code</field>
+	    <field name="protected" eval="True"/>
+	    <field name="eval_sudo" eval="False"/>
+	    <field name="code">result = model.name_create(params.get('name'))</field>
+	    <field name="docs_summary">Create Contact</field>
+	    <field name="docs_description">Create a new contact.</field>
+	    <field name="docs_parameters">
+[{
+	"name": "name", 
+	"in": "query", 
+	"description": "Contact Name", 
+	"schema": {"type": "string"}
+}]
+	</field>
+	</record>
+         
+</odoo>

@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->    
+    <record model="ir.ui.view" id="user_activity_view_tree">
+        <field name="name">user.recent.log.tree</field>
+        <field name="model">user.recent.log</field>
+        <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="model" invisible="1"/>
+            <field name="res_id" invisible="1"/>
+            <field name="last_visited_on"/>
+            <field name="user_id"/>
+            <button name="redirect_on_record" string="Redirect on Record" type="object" class="oe_title"
+                    icon="fa-arrow-right"/>
+        </tree>
+        </field>
+    </record>
+
+    <!-- explicit list view definition -->    
+    <record model="ir.ui.view" id="user_activity_view_form">
+        <field name="name">user.recent.log.form</field>
+        <field name="model">user.recent.log</field>
+        <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="redirect_on_record" string="Redirect on Record" type="object" class="oe_title" icon="fa-arrow-right"/>
+            </header>
+            <sheet>
+            <group cols="4">
+                <field name="name"/>
+                <field name="model" invisible="1"/>
+                <field name="res_id" invisible="1"/>
+                <field name="last_visited_on"/>
+                <field name="user_id"/>
+            </group>
+            <notebook>
+                <page string="User Activity">
+                    <field name="activity" nolabel="1"/>
+                </page>
+            </notebook>
+            </sheet>
+        </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->    
+    <record model="ir.actions.act_window" id="action_user_activity">
+        <field name="name">User Recent Log(s)</field>
+        <field name="res_model">user.recent.log</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</data>
+</odoo>

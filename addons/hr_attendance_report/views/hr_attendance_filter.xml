@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_attendance_tree_inheritted" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.inheritted</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='worked_hours']" position="after">
+                <field name="checkin_day" invisible="1"/>
+<!--                <field name="quarter_start_rel" string="Quarter Start" invisible="False"/>-->
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_attendance_view_form_inheritted" model="ir.ui.view">
+        <field name="name">hr.attendance.form.inheritted</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='check_out']" position="after">
+                <field name="checkin_day" invisible="1"/>
+<!--                <field name="quarter_start_rel" string="Quarter Start" invisible="False"/>-->
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="hr_attendance_view_filter_inheritted" model="ir.ui.view">
+        <field name="name">hr_attendance_view_filter_inheritted</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//field[@name='employee_id']" position="after">-->
+<!--                <field name="quarter_start_rel"/>-->
+<!--            </xpath>-->
+            <xpath expr="//filter[@name='check_in_filter']" position="before">
+                <filter string="This Month" name="current_month" domain="[('checkin_day','&lt;',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')), ('check_in','&gt;=',time.strftime('%%Y-%%m-01'))]"/>
+                <filter string="This Year" name="current_year" domain="[('checkin_day','&lt;',(context_today()+relativedelta(years=1)).strftime('%%Y-01-01')), ('check_in','&gt;=',time.strftime('%%Y-01-01'))]"/>
+                <separator/>
+                <filter string="Last Month" name="prev_month" domain="[('checkin_day','&gt;=',(context_today()-relativedelta(months=1)).strftime('%%Y-%%m-01')),('check_in','&lt;',time.strftime('%%Y-%%m-01'))]"/>
+                <filter string="Last Year" name="prev_year" domain="[('checkin_day','&gt;=',(context_today()-relativedelta(years=1)).strftime('%%Y-%%m-01')),('check_in','&lt;',time.strftime('%%Y-01-01'))]"/>
+                <separator/>
+<!--<filter string="This Quarter" name="this_quarter"-->
+<!--                        domain="['&amp;',('check_in', '&gt;=', quarter_start),('check_in', '&lt;=', quarter_end)]"/>-->
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

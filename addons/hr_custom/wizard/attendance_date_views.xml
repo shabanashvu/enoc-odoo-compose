@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    <menuitem id="menu_hr_attendance_requests_approvals" name="Approval Requests" parent="hr_attendance.menu_hr_attendance_root" sequence="20" groups="hr_attendance.group_hr_attendance_user"/>
+    
+        <record model="ir.ui.view" id="attendance_wizard_view_form">
+            <field name="name">attendance.date.form</field>
+            <field name="model">attendance.date</field>
+            <field name="arch" type="xml">
+                <form string="Date">
+                    <group col="4">
+                       <field name="start_date" />
+                       <field name="end_date" />
+                    </group>
+                    <footer>
+                        <button string="Show Records" name="action_show" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_view_attendance_datee" model="ir.actions.act_window">
+            <field name="name">Date Duration</field>
+            <field name="res_model">attendance.date</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="attendance_wizard_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            id="menu_action_attendance_datee"
+            name="Attendance R1 Approval"
+            action="action_view_attendance_datee"
+            parent="menu_hr_attendance_requests_approvals"
+            groups="group_r1_approver"/>
+        
+        <record model="ir.ui.view" id="attendance_wizard_r2_view_form1">
+            <field name="name">attendance.date.form</field>
+            <field name="model">attendance.date.r2</field>
+            <field name="arch" type="xml">
+                <form string="Date">
+                    <group col="4">
+                       <field name="start_date" />
+                       <field name="end_date" />
+                    </group>
+                    <footer>
+                        <button string="Show Records" name="action_show" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_view_attendance_r2_date" model="ir.actions.act_window">
+            <field name="name">Date Duration</field>
+            <field name="res_model">attendance.date.r2</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="attendance_wizard_r2_view_form1"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            id="menu_action_attendance_r2_date"
+            name="Attendance R2 Approval"
+            action="action_view_attendance_r2_date"
+            parent="menu_hr_attendance_requests_approvals"
+            groups="group_r2_approver"/>
+            
+        <record id="generate_schedule_view" model="ir.ui.view">
+			<field name="name">generate.schedule.wizard.form</field>
+			<field name="model">generate.schedule.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Move Attendances">
+					<p>
+						Generate Schedule .
+					</p>
+					<group col="4">
+						<field name="month_id"/>
+						<field name="year_id"/>
+					</group>
+					<field name="employee_ids"  options="{'always_reload': True}">
+						<tree>
+                    		<field name="name"/>
+                    		
+                    	</tree>
+					</field>
+					<footer>
+						<button string="Generate" name="generate_schedule" type="object" default_focus="1" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_generate_schedule" model="ir.actions.act_window">
+			<field name="name">Generate Schedule</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">generate.schedule.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem action="action_generate_schedule" sequence="3" id="menu_generate_schedule" parent="hr_attendance.menu_hr_attendance_settings" groups="hr_attendance.group_hr_attendance_user"/>
+        
+        <record id="weekly_off_wizard_view" model="ir.ui.view">
+			<field name="name">weekly_off.wizard.wizard.form</field>
+			<field name="model">weekly_off.wizard</field>
+			<field name="arch" type="xml">
+				<form string="weekly_off calculator">
+					<group col="4">
+						<field name="month_id"/>
+						<field name="year_id"/>
+					</group>
+					<footer>
+						<button string="Recalculate" name="recalculate" type="object" default_focus="1" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_weekly_off" model="ir.actions.act_window">
+			<field name="name">Weekly Off Calculator</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">weekly_off.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem action="action_weekly_off" sequence="4" id="menu_weekly_off" parent="hr_attendance.menu_hr_attendance_manage_attendances" groups="hr_attendance.group_hr_attendance_user"/>
+        
+        
+        
+    </data>
+</odoo>

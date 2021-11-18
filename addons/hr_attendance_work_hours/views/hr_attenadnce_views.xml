@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <data>
+  
+  <record id="view_resource_calendar_attendance_tree" model="ir.ui.view">
+        <field name="name">resource.calendar.attendance.tree</field>
+        <field name="model">resource.calendar.attendance</field>
+        <field name="inherit_id" ref="resource.view_resource_calendar_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='hour_to']" position="after">
+             	<field name="grace_period" widget="float_time"/>
+            </xpath>
+        </field>
+    </record>
+    
+    
+        <record id="inherited_view_attendance_tree" model="ir.ui.view">
+            <field name="name">hr.attendance.tree.inherited</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+            <field name="arch" type="xml">
+                <field name="worked_hours" position="after">
+                	<!-- <field name="in_work_hours" widget="float_time" sum="total_in_work_hours"/>
+                	<field name="out_work_hours" widget="float_time" sum="total_out_work_hours"/> 
+                	<field name="late_minutes" widget="float_time" sum="total_late_minutes"/>
+                	<field name="late_minutes_gp" optional="hide" widget="float_time" sum="total_late_minutes_gp"/>
+                	<field name="early_check_out" widget="float_time" sum="total_early_check_out"/>-->
+                	<field name="resource_calendar_id" invisible="1"/>
+                </field>
+                <field name="worked_hours" position="attributes">
+                	<attribute name="sum">total_worked_hours</attribute>
+                </field>
+            </field>
+        </record>
+        
+        <record id="hr_attendance.menu_hr_attendance_root" model="ir.ui.menu">
+			<field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+		</record>
+		
+		<record id="hr_attendance.menu_hr_attendance_manage_attendances" model="ir.ui.menu">
+			<field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+		</record>
+		
+		<record id="hr_attendance.menu_hr_attendance_view_attendances" model="ir.ui.menu">
+			<field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+		</record>
+  </data>
+</odoo>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> 
+            
+
+<record model="ir.ui.view" id="employee_certification_details_view">
+            <field name="name">employee.certification.form</field>
+            <field name="model">employee.certification</field>
+            <field name="arch" type="xml">
+                <form string="Employee Certification" >
+                	<sheet>
+                		<group col="4" colspan="4">
+	                       <field name="emp_id" required="1"/>
+	                       <field name="type" required="1"/>
+	                       <field name="certi_id" domain="[('type', '=', type)]"/>
+	                       <field name="exp_date"/>
+	                       <field name="active" options='{"terminology": "archive"}'/>
+	                    </group>
+	                    <notebook>
+	                    	<page string ="Attachments">
+	                    		<field name="attach_ids">
+	                    			<tree editable="top">
+	                    				<field name="img"></field>
+	                    			</tree>
+	                    		</field>
+	                    	</page>
+	                    </notebook>   
+                    </sheet>
+                </form>
+           </field>
+       </record>
+       
+       <record model="ir.ui.view" id="employee_certification_details_tree">
+            <field name="name">employee.certification.tree</field>
+            <field name="model">employee.certification</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Certification" >
+                      <field name="emp_id" required="1"/>
+                      <field name="type" required="1"/>
+                      <field name="certi_id" />
+                      <field name="exp_date"/>
+                </tree>
+           </field>
+       </record>
+       
+       <record id="action_view_hr_cerification" model="ir.actions.act_window">
+            <field name="name">Employee Certifications</field>
+            <field name="res_model">employee.certification</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="view_id" ref="attendance_overtime_data_view"/> -->
+            <field name="target">current</field>
+        </record>
+       
+       <menuitem
+            id="menu_hr_cerification"
+            name="Employee Certifications"
+            action="action_view_hr_cerification"
+            parent="hr.menu_hr_root"
+            sequence="4"/>
+            
+         <record id="action_view_doc_type" model="ir.actions.act_window">
+            <field name="name">Types</field>
+            <field name="res_model">document.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+        
+        <record model="ir.ui.view" id="employee_certification_master_view">
+            <field name="name">certificate.master.form</field>
+            <field name="model">certificate.master</field>
+            <field name="arch" type="xml">
+                <form string="Subtypes" >
+                	<sheet>
+                		<group col="4" colspan="4">
+	                       <field name="name" required="1"/>
+	                       <field name="type" required="1"/>
+	                    </group>
+                    </sheet>
+                </form>
+           </field>
+       </record>
+        
+        <record id="action_view_doc_subtype" model="ir.actions.act_window">
+            <field name="name">Subtypes</field>
+            <field name="res_model">certificate.master</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+            
+        <menuitem
+                id="menu_config_doc_types"
+                name="Document Types"
+                parent="hr.menu_human_resources_configuration"
+                groups="hr.group_hr_manager"
+                sequence="100"/>
+                
+        <menuitem
+                id="menu_config_doc_types_type"
+                name="Types"
+                parent="menu_config_doc_types"
+                groups="hr.group_hr_manager"
+                action="action_view_doc_type"
+                sequence="100"/>
+         
+         <menuitem
+                id="menu_config_doc_types_subtype"
+                name="Subtypes"
+                parent="menu_config_doc_types"
+                groups="hr.group_hr_manager"
+                action="action_view_doc_subtype"
+                sequence="100"/>
+       
+   </data>
+   </odoo>

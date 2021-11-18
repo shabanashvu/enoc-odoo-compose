@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    Copyright (c) 2017-today MuK IT GmbH.
+
+    This file is part of MuK REST API for Odoo
+    (see https://mukit.at).
+
+    MuK Proprietary License v1.0
+
+    This software and associated files (the "Software") may only be used
+    (executed, modified, executed after modifications) if you have
+    purchased a valid license from MuK IT GmbH.
+
+    The above permissions are granted for a single database per purchased
+    license. Furthermore, with a valid license it is permitted to use the
+    software on other databases as long as the usage is limited to a testing
+    or development environment.
+
+    You may develop modules based on the Software or that use the Software
+    as a library (typically by depending on it, importing it and using its
+    resources), but without copying any source code or material from the
+    Software. You may distribute those modules under the license of your
+    choice, provided that this license is compatible with the terms of the
+    MuK Proprietary License (For example: LGPL, MIT, or proprietary licenses
+    similar to this one).
+
+    It is forbidden to publish, distribute, sublicense, or sell copies of
+    the Software or modified copies of the Software.
+
+    The above copyright notice and this permission notice must be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+    DEALINGS IN THE SOFTWARE.
+
+-->
+
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.base.setup</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="0"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='user_default_rights']" position="after">
+                <div id="rest_api">
+                    <h2>API</h2>
+                    <div class='row mt16 o_settings_container' name="rest_api_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Docs Security</span>
+                                <div class="text-muted">
+                                    Set a security group to restrict the access to the docs. 
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16 row">
+                                        <label for="rest_docs_security_group_id" string="Group" class="col-3 col-lg-3 o_light_label"/>
+                                        <field name="rest_docs_security_group_id" class="oe_inline"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">
+                                    OAuth 2.0
+                                </span>
+                                <div class="text-muted">
+                                    Set the configruation values for the bearer token.
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16 row">
+                                        <label for="rest_oauth2_bearer_expires_in_seconds" string="Expires in" class="col-3 col-lg-3 o_light_label"/>
+                                        <field name="rest_oauth2_bearer_expires_in_seconds" class="oe_inline"/>
+                                        <span class="ml-1 mt-1 d-none d-sm-inline-block">in Seconds</span>
+                                    </div>
+                                    <div class="mt16 row">
+                                        <label for="rest_oauth2_bearer_autovacuum_days" string="Clean after" class="col-3 col-lg-3 o_light_label"/>
+                                        <field name="rest_oauth2_bearer_autovacuum_days" class="oe_inline"/>
+                                        <span class="ml-1 mt-1 d-none d-sm-inline-block">in Days</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

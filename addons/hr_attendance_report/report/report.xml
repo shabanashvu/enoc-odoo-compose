@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="report_attendance_xls" model="ir.actions.report">
+        <field name="name">Attendance Report XLSX</field>
+        <field name="model">hr.attendance.report.xls</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">hr_attendance_report.attendance_xlsx</field>
+        <field name="report_file">hr_attendance_report</field>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_overtime_xls" model="ir.actions.report">
+        <field name="name">Overtime Report XLSX</field>
+        <field name="model">hr.overtime.report.xls</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">hr_attendance_report.overtime_xlsx</field>
+        <field name="report_file">hr_attendance_report</field>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_special_overtime_xls" model="ir.actions.report">
+        <field name="name">Special Overtime Report XLSX</field>
+        <field name="model">hr.special.overtime.report.xls</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">hr_attendance_report.special_overtime_xlsx</field>
+        <field name="report_file">hr_attendance_report</field>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_detailed_attendance_xls" model="ir.actions.report">
+        <field name="name">Detailed Attendance Report XLSX</field>
+        <field name="model">hr.detailed.attendance.report.xls</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">hr_attendance_report.detailed_attendance_xlsx</field>
+        <field name="report_file">hr_attendance_report</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

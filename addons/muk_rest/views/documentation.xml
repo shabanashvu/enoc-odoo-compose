@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    Copyright (c) 2017-today MuK IT GmbH.
+
+    This file is part of MuK REST API for Odoo
+    (see https://mukit.at).
+
+    MuK Proprietary License v1.0
+
+    This software and associated files (the "Software") may only be used
+    (executed, modified, executed after modifications) if you have
+    purchased a valid license from MuK IT GmbH.
+
+    The above permissions are granted for a single database per purchased
+    license. Furthermore, with a valid license it is permitted to use the
+    software on other databases as long as the usage is limited to a testing
+    or development environment.
+
+    You may develop modules based on the Software or that use the Software
+    as a library (typically by depending on it, importing it and using its
+    resources), but without copying any source code or material from the
+    Software. You may distribute those modules under the license of your
+    choice, provided that this license is compatible with the terms of the
+    MuK Proprietary License (For example: LGPL, MIT, or proprietary licenses
+    similar to this one).
+
+    It is forbidden to publish, distribute, sublicense, or sell copies of
+    the Software or modified copies of the Software.
+
+    The above copyright notice and this permission notice must be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+    DEALINGS IN THE SOFTWARE.
+
+-->
+
+<odoo>
+
+	<record id="view_rest_client_form" model="ir.ui.view">
+		<field name="name">muk_rest.client_generator.form</field>
+		<field name="model">muk_rest.client_generator</field>
+		<field name="arch" type="xml">
+			<form string="Generate Client">
+				<p>
+					There are excellent clients in almost every programming language. For example, in Python there is 
+					<a href="https://github.com/psf/requests" target="_blank">Requests: HTTP for Humans</a> to make requests and 
+					<a href="https://github.com/requests/requests-oauthlib" target="_blank">Requests-OAuthlib</a> to authenticate
+					with OAuth, to name just one as an example.
+				</p>
+				<p>
+					In case you want to create your own client, you can automatically generate one based on the API documentation.
+					The client is created by <a href="https://github.com/swagger-api/swagger-codegen" target="_blank">Swagger CodeGen</a> 
+					and is only meant as a starting point to create your own. Select a programming language and activate the options in
+					case you want to customize the client generation further. The client might not be useable out of the box and must
+					be further developed to fulfill all your requirements.
+
+				</p>
+				<group>
+					<group>
+						<field name="language"/>
+					</group>
+					<group>
+						<field name="send_options" widget="boolean_toggle"/>
+					</group>
+				</group>
+				<group string="Options" attrs="{'invisible': [('send_options', '=', False)]}">
+					<field name="options" nolabel="1" widget="ace" options="{'mode': 'json'}"/>
+				</group>
+				<footer>
+					<button name="action_generate_client" string="Generate" type="object" class="btn-primary"/>
+					<button special="cancel" string="Cancel" type="object" class="btn-secondary"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+	
+	<record id="action_rest_endpoints" model="ir.actions.act_url">
+    	<field name="name">API</field>
+		<field name="url">/rest/docs?template=docs_standalone</field>
+		<field name="target">new</field>
+	</record>	
+
+	<record id="action_rest_client_generator" model="ir.actions.act_window">
+		<field name="name">Generate Client</field>
+		<field name="res_model">muk_rest.client_generator</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+		
+	<menuitem id="menu_rest_endpoints" 
+		name="Endpoints"
+		parent="cat_menu_rest_documentation" 
+		action="action_rest_endpoints" 
+		sequence="2" />	
+		
+	<menuitem id="menu_rest_client_generator" 
+		name="Clients"
+		parent="cat_menu_rest_documentation" 
+		action="action_rest_client_generator" 
+		sequence="5" />	
+		
+</odoo>

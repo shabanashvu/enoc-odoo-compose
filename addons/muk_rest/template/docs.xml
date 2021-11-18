@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    Copyright (c) 2017-today MuK IT GmbH.
+
+    This file is part of MuK REST API for Odoo
+    (see https://mukit.at).
+
+    MuK Proprietary License v1.0
+
+    This software and associated files (the "Software") may only be used
+    (executed, modified, executed after modifications) if you have
+    purchased a valid license from MuK IT GmbH.
+
+    The above permissions are granted for a single database per purchased
+    license. Furthermore, with a valid license it is permitted to use the
+    software on other databases as long as the usage is limited to a testing
+    or development environment.
+
+    You may develop modules based on the Software or that use the Software
+    as a library (typically by depending on it, importing it and using its
+    resources), but without copying any source code or material from the
+    Software. You may distribute those modules under the license of your
+    choice, provided that this license is compatible with the terms of the
+    MuK Proprietary License (For example: LGPL, MIT, or proprietary licenses
+    similar to this one).
+
+    It is forbidden to publish, distribute, sublicense, or sell copies of
+    the Software or modified copies of the Software.
+
+    The above copyright notice and this permission notice must be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+    DEALINGS IN THE SOFTWARE.
+
+-->
+
+<odoo>
+
+    <template id="docs" name="API Docs">
+        <t t-call="web.layout">
+            <t t-set="head_docs">
+                <meta name="generator" content="API Docs"/>
+                <meta name="description" content="API Docs"/>
+                
+                <t t-call-assets="web.assets_common" t-js="false"/>
+                <t t-call-assets="web.assets_frontend" t-js="false"/>
+                <t t-call-assets="muk_rest.assets_docs" t-js="false"/>
+                
+				<link rel="shortcut icon" type="image/x-icon" href="/muk_rest/static/src/img/favicon.ico" />
+				
+				<script type="text/javascript">
+	                odoo.rest = {
+	                	serverBaseUrl: "<t t-esc="base_url"/>",
+	                	databaseName: "<t t-esc="db_name"/>",
+	                	databaseHeader: "<t t-esc="db_header"/>",
+	                	databaseParam: "<t t-esc="db_param"/>",
+	                };
+	            </script>
+				
+                <t t-call-assets="web.assets_common" t-css="false"/>
+                <t t-call-assets="web.assets_frontend" t-css="false"/>
+                <t t-call-assets="muk_rest.assets_docs" t-css="false"/>
+            </t>
+	        <t t-set="head" t-value="head_docs + (head or '')"/>
+	        <t t-set="body_classname" t-value="'mk_docs'"/>
+	        <main>
+	        	<div id="swagger-ui"/>
+	       	</main>
+        </t>
+    </template>
+    
+    <template id="docs_standalone" inherit_id="docs" primary="True">
+        <xpath expr="//main" position="before">
+        	<header>
+        		<nav class="navbar navbar-light bg-light border-bottom">
+				  	<a href="/web" class="text-dark" accesskey="h">
+			            <i class="fa fa-th"></i>
+			        </a>
+			        <a class="mk_docs_logo" href="https://www.mukit.at?utm_source=app&amp;utm_medium=rest" target="_blank">
+                    	<span class="align-middle">Powered by <strong>MuK IT</strong></span>
+                    	<img src="/muk_rest/static/src/img/logo.svg" alt="Logo"/>
+                    </a>
+				</nav>
+        	</header>
+        </xpath>
+        <xpath expr="//main" position="attributes">
+        	<attribute name="class">mk_docs_standalone</attribute>
+        </xpath>
+    </template>
+    
+    <template id="docs_frame" inherit_id="docs" primary="True">
+        <xpath expr="//main" position="attributes">
+        	<attribute name="class">mk_docs_frame</attribute>
+        </xpath>
+    </template>
+    
+</odoo>

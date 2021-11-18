@@ -1,0 +1,1688 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* muk_rest
+#
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-29 03:38+0000\n"
+"PO-Revision-Date: 2021-01-29 14:37+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "/api/.*"
+msgstr "/api/.*"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_default_response_200
+msgid "200"
+msgstr "200"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_default_response_400
+msgid "400"
+msgstr "400"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_default_response_401
+msgid "401"
+msgstr "401"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_default_response_500
+msgid "500"
+msgstr "500"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"<code>Response</code>: Response to use with <code>response = Response(...)</"
+"code>"
+msgstr ""
+"<code>Response</code>：Response的使用方式为<code>response = Response(...)</"
+"code>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"<code>b64encode</code>, <code>b64decode</code>: Base64 converter to encode "
+"and decode binary data"
+msgstr ""
+"<code>b64encode</code>，<code>b64decode</code>：对二进制数据进行编码和解码的"
+"Base64转换器"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"<code>date_format</code>, <code>datetime_format</code>: server date and "
+"time formats"
+msgstr ""
+"<code>date_format</code>，<code>datetime_format</code>：服务器日期和时间的格"
+"式"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>env</code>: Odoo Environment on which the rule is triggered"
+msgstr "<code>env</code>：规则所触发的Odoo环境"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>exceptions</code>: Exception to use with <code>raise</code>"
+msgstr "<code>exceptions</code>：Exception的使用方式为<code>raise</code>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"<code>json</code>, <code>time</code>, <code>datetime</code>, "
+"<code>dateutil</code>, <code>timezone</code>: useful Python libraries"
+msgstr ""
+"<code>json</code>，<code>time</code>， <code>datetime</code>，"
+"<code>dateutil</code>，<code>timezone</code>：实用的Python库"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>logger.info(message)</code>: Python logging framework"
+msgstr "<code>logger.info(message)</code>：Python logging框架"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"<code>model</code>: Odoo Model of the record on which the rule is triggered"
+msgstr "<code>model</code>： 规则所触发的记录所属的Odoo模型"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"<code>params</code>: HTTP parameters with which the endpoint was called."
+msgstr "<code>params</code>：端点所调用的HTTP参数。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"<code>responses</code>: Responses to use with <code>response = ...</code>"
+msgstr ""
+"<code>responses</code>：Response的使用方式为<code>response = ...</code>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"<code>uid</code>, <code>user</code>: User on which the rule is triggered"
+msgstr "<code>uid</code>，<code>user</code>：规则所触发的用户"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "<i class=\"fa fa-lock\"/> Ressources"
+msgstr "<i class=\"fa fa-lock\"/>资源"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.docs_standalone
+msgid "<span class=\"align-middle\">Powered by <strong>MuK IT</strong></span>"
+msgstr ""
+"<span class=\"align-middle\">由<strong>MuK IT 提供支持</strong></span>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "<span class=\"ml-1 mt-1 d-none d-sm-inline-block\">in Days</span>"
+msgstr "<span class=\"ml-1 mt-1 d-none d-sm-inline-block\">以天为单位</span>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "<span class=\"ml-1 mt-1 d-none d-sm-inline-block\">in Seconds</span>"
+msgstr "<span class=\"ml-1 mt-1 d-none d-sm-inline-block\">以秒为单位</span>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Docs Security</span>"
+msgstr "<span class=\"o_form_label\">文档安全</span>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "<span class=\"o_label\">Active Sessions</span>"
+msgstr "<span class=\"o_label\">活动中的Sessions</span>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<span class=\"o_stat_text\">Open Docs</span>"
+msgstr "<span class=\"o_stat_text\">打开文档</span>"
+
+#. module: muk_rest
+#: model:ir.actions.act_url,name:muk_rest.action_rest_endpoints
+#: model:ir.ui.menu,name:muk_rest.main_menu_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "API"
+msgstr "API"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_res_config_settings__rest_docs_security_group_id
+msgid "API Docs Group"
+msgstr "API文档组"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_res_config_settings__rest_docs_security_group_xmlid
+msgid "API Docs Group XMLID"
+msgstr "API文档组XMLID"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+msgid "API Logo"
+msgstr "API图标"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_access_rules
+msgid "Access Control"
+msgstr "访问控制"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_access_rules_expression
+msgid "Access Control Expression"
+msgstr "访问控制表达式"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_access_rules
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__rule_ids
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__rule_ids
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__rule_ids
+#: model:ir.ui.menu,name:muk_rest.menu_rest_access_rules
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Access Rules"
+msgstr "权限规则"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_token_form
+msgid "Access Token"
+msgstr "访问令牌(Access Token)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_access_token
+msgid "Access Token are used to authenticate a user with the server."
+msgstr "访问令牌(Access Token)用于通过服务器对用户进行身份验证。"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.menu_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_token_tree
+msgid "Access Tokens"
+msgstr "访问令牌(Access Tokens)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_access_rules
+msgid "Access rules are used to restrict Restful API configurations."
+msgstr "访问规则用于限制Restful API的配置。"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__action_id
+msgid "Action that is called by the endpoint."
+msgstr "端点所调用的Action。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__active
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__active
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__active
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__active
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+msgid "Active"
+msgstr "启用"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_oauth__security__advanced
+msgid "Advanced Access Control"
+msgstr "高级访问控制"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "All"
+msgstr "全部"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid ""
+"All resources to which the user has access are accessible\n"
+"\t\t\t\t        \t\tvia the Restful interface."
+msgstr ""
+"用户可以访问的所有资源都可以通过\n"
+"\t\t\t\t        \t\tRestful界面调用。"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth
+msgid ""
+"An OAuth Settings can be used to connect to the system via the Restful API."
+msgstr "OAuth设置可用于通过RestfulAPI连接到系统中。"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth1
+msgid ""
+"An OAuth1 setting can be used to connect to the system via the Restful API."
+msgstr "OAuth1设置可用于通过RestfulAPI连接到系统中。"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth2
+msgid ""
+"An OAuth2 setting can be used to connect to the system via the Restful API."
+msgstr "OAuth2设置可用于通过RestfulAPI连接到系统中。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__applied
+msgid "Applied"
+msgstr "生效中"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Archive"
+msgstr "归档"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_oauth2__state__authorization_code
+msgid "Authorization Code"
+msgstr "授权码(Authorization Code)"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth2.py:0
+#, python-format
+msgid "Authorization Code needs a default callback."
+msgstr "Authorization Code需要一个默认的回调(callback)。"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_authorization_code
+#: model:ir.ui.menu,name:muk_rest.menu_rest_authorization_code
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_authorization_code_tree
+msgid "Authorization Codes"
+msgstr "授权码(Authorization Codes)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_authorization_code
+msgid "Authorization Codes are used to authenticate a user with the server."
+msgstr "授权码(Authorization Codes)用于通过服务器对用户进行身份验证。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_error
+msgid "Authorization Error"
+msgstr "授权错误"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Authorize"
+msgstr "授权"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Available resources"
+msgstr "可用资源"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_oauth__security__basic
+msgid "Basic Access Control"
+msgstr "基本访问控制"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_bearer_token_form
+msgid "Bearer Token"
+msgstr "匿名令牌(Bearer Token)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_bearer_token
+msgid "Bearer Token are used to authenticate a user with the server."
+msgstr "匿名令牌(Bearer Token)用于通过服务器对用户进行身份验证。"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.menu_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_bearer_token_tree
+msgid "Bearer Tokens"
+msgstr "匿名令牌(Bearer Tokens)"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_callback
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__callback
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__callback
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_callback_form
+msgid "Callback"
+msgstr "回调"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__url
+msgid "Callback URL"
+msgstr "回调URL"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__callback_ids
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__callback_ids
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__callback_ids
+msgid "Callback URLs"
+msgstr "回调URLs"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_callback
+#: model:ir.ui.menu,name:muk_rest.menu_rest_callback
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_callback_tree
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Callbacks"
+msgstr "回调"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "Clean after"
+msgstr "失效周期为"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_oauth2__state__client_credentials
+msgid "Client Credentials"
+msgstr "客户端凭据(Client Credentials)"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_client_generator
+msgid "Client Generator"
+msgstr "客户端生成器(Client Generator)"
+
+#. module: muk_rest
+#: model:ir.model.constraint,message:muk_rest.constraint_muk_rest_oauth2_client_id_unique
+msgid "Client ID must be unique."
+msgstr "客户端ID必须是唯一的。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__client_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__client_key
+msgid "Client Key"
+msgstr "客户端密钥(Client Key)"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__client_secret
+msgid "Client Secret"
+msgstr "客户端密钥(Client Secret)"
+
+#. module: muk_rest
+#: model:ir.model.constraint,message:muk_rest.constraint_muk_rest_oauth2_client_secret_unique
+msgid "Client Secret must be unique."
+msgstr "客户端密钥(Client Secret)必须是唯一的。"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.menu_rest_client_generator
+msgid "Clients"
+msgstr "客户端"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__code
+msgid "Code"
+msgstr "代码"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Code Settings"
+msgstr "代码设置"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__color
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__color
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__color
+msgid "Color"
+msgstr "颜色"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__company
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__company
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__company
+msgid "Company"
+msgstr "公司"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_components
+msgid "Components"
+msgstr "组件"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:0
+#, python-format
+msgid ""
+"Components are not valid JSON\n"
+"\n"
+"{}"
+msgstr ""
+"组件必须为有效的JSON\n"
+"\n"
+"{}"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:0
+#, python-format
+msgid "Components need to be a map of component names."
+msgstr "组件需要是组件名称的映射。"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_res_config_settings
+msgid "Config Settings"
+msgstr "配置"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__oauth_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__oauth_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__oauth_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__oauth_id
+#: model:ir.ui.menu,name:muk_rest.cat_menu_rest_configuration
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Configuration"
+msgstr "配置"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_tree
+msgid "Configurations"
+msgstr "配置"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__consumer_key
+msgid "Consumer Key"
+msgstr "消费者密钥(Consumer Key)"
+
+#. module: muk_rest
+#: model:ir.model.constraint,message:muk_rest.constraint_muk_rest_oauth1_consumer_key_unique
+msgid "Consumer Key must be unique."
+msgstr "消费者密钥(Consumer Key)必须是唯一的。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__consumer_secret
+msgid "Consumer Secret"
+msgstr "消费者密钥(Consumer Secret)"
+
+#. module: muk_rest
+#: model:ir.model.constraint,message:muk_rest.constraint_muk_rest_oauth1_consumer_secret_unique
+msgid "Consumer Secret must be unique."
+msgstr "消费者密钥(Consumer Secret)必须是唯一的。"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_access_rules
+msgid "Create a new Configuration Access Rules"
+msgstr "创建新的配置访问规则"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_callback
+msgid "Create a new Configuration Callbacks"
+msgstr "创建新的配置回调"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_endpoint
+msgid "Create a new Custom Restful Endpoints"
+msgstr "创建新的自定义 Restful 端点"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth1
+msgid "Create a new OAuth1 setting"
+msgstr "创建新的 OAuth1 配置"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_oauth_on_create
+msgid "Create a new OAuth2 Setting"
+msgstr "创建新的 OAuth2 配置"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth2
+msgid "Create a new OAuth2 setting"
+msgstr "创建新的 OAuth2 配置"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__create_date
+msgid "Creation Date"
+msgstr "创建日期"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__endpoint
+msgid "Custom Endpoint"
+msgstr "自定义端点"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_endpoint
+msgid "Custom Restful Endpoint"
+msgstr "自定义Restful端点"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__route
+msgid "Custom Route"
+msgstr "自定义路由"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__url
+msgid "Custom Route URL"
+msgstr "自定义路由URL"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_endpoint
+msgid "Custom endpoints can be used to customize the API to your needs."
+msgstr "自定义端点可用于根据您的需求自定义API。"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_endpoint__method__delete
+msgid "DELETE"
+msgstr "DELETE"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_oauth
+#: model:ir.ui.menu,name:muk_rest.menu_rest_oauth
+msgid "Dashboard"
+msgstr "仪表板"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__default_callback_id
+msgid "Default Callback"
+msgstr "默认回调(Callback)"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Default Responses"
+msgstr "默认响应(Responses)"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_oauth1__security
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_oauth2__security
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_oauth__security
+msgid ""
+"Defines the security settings to be used by the Restful API\n"
+"- Basic uses the user's security clearance to check requests from the API.\n"
+"- Advanced uses other rules in addition to the user security clearance, to "
+"further restrict the access.\n"
+msgstr ""
+"定义Restful API所使用的安全设置\n"
+"- 基本(Basic)使用用户的安全许可来检核来自API的请求。\n"
+"- 高级(Advanced)在用户安全许可的基础上添加了其他规则以进一步限制访问。\n"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__docs_components
+msgid ""
+"Describe the components to display them in the documentation.\n"
+"Components are global objects. It is therefore possible to use\n"
+"components of other endpoints, as well as those defined by\n"
+"REST API itself. Since all components share the same scope it\n"
+"is important to define a unique name.\n"
+msgstr ""
+"描述要在文档中显示的组件。\n"
+"组件(Components)是全局对象。因此，可以使用其他端点的\n"
+"组件，以及由REST API本身所定义的组件。\n"
+"由于所有组件共享相同的范围(scope)，因此定义唯一名称非常重要。\n"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__docs_parameters
+msgid "Describe the parameters to display them in the documentation."
+msgstr "描述要在文档中显示的参数(parameter)。"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__docs_responses
+msgid "Describe the responses to display them in the documentation."
+msgstr "描述要在文档中显示的响应(responses)。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_description
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__description
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__description
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__description
+msgid "Description"
+msgstr "说明"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: muk_rest
+#. openerp-web
+#: code:addons/muk_rest/static/src/xml/systray.xml:0
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+#, python-format
+msgid "Docs"
+msgstr "文档"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.cat_menu_rest_documentation
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "Documentation"
+msgstr "文档"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__domain
+msgid "Domain"
+msgstr "域条件(Domain)"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__domain_field_ids
+msgid "Domain Field that will be automatically read after the search."
+msgstr "搜索时将自动套用的域条件(Domain)。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Domain Fields"
+msgstr "域条件(Domain)字段"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Domain Settings"
+msgstr "域条件(Domain)设置"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__domain
+msgid "Domain that is called by the endpoint."
+msgstr "端点所调用的域条件(Domain)。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Dropdown menu"
+msgstr "下拉菜单"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Email"
+msgstr "邮箱"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Endpoint"
+msgstr "端点"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:0
+#, python-format
+msgid "Endpoint validation has failed!"
+msgstr "端点验证失败！"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_endpoint
+#: model:ir.ui.menu,name:muk_rest.menu_rest_endpoint
+#: model:ir.ui.menu,name:muk_rest.menu_rest_endpoints
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_tree
+msgid "Endpoints"
+msgstr "端点"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_endpoint__state__domain
+msgid "Evaluate Domain"
+msgstr "评估域条件(Domain)"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__state
+msgid "Evaluation Type"
+msgstr "评估类型"
+
+#. module: muk_rest
+#: model:ir.actions.act_url,name:muk_rest.action_rest_examples
+#: model:ir.ui.menu,name:muk_rest.menu_rest_examples
+msgid "Examples"
+msgstr "示例"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_endpoint__state__code
+msgid "Execute Python Code"
+msgstr "执行Python代码"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_endpoint__state__action
+msgid "Execute a Server Action"
+msgstr "执行服务器操作(Server Action)"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__expiration_date
+msgid "Expiration Date"
+msgstr "失效日期"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+msgid "Expired"
+msgstr "已失效"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "Expires in"
+msgstr "失效于"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__expression
+msgid "Expression"
+msgstr "表达式"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__expression_ids
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_rules_form
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Expressions"
+msgstr "表达式"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__domain_field_ids
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Fields"
+msgstr "字段"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_endpoint__method__get
+msgid "GET"
+msgstr "GET"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid "Generate"
+msgstr "生成"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_client_generator
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid "Generate Client"
+msgstr "生成客户端"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_oauth2_search
+msgid "Grant Type"
+msgstr "许可类型"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "Group"
+msgstr "组"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_authorization_code
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_request_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "Group By"
+msgstr "分组"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__method
+msgid "HTTP Method"
+msgstr "HTTP 方法"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTP 路由"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Help"
+msgstr "帮助"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Help with Python expressions"
+msgstr "Python表达式的说明"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Hidden"
+msgstr "隐藏"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+msgid "Homepage"
+msgstr "主页"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__homepage
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__homepage
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__homepage
+msgid "Homepage URL"
+msgstr "主页URL"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__id
+msgid "ID"
+msgstr "ID"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__eval_sudo
+msgid "If checked the result is evaluated without access checks."
+msgstr "如果选中，则计算结果时不进行访问检查(Access Check)。"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__wrap_response
+msgid "If checked the result is wrapped with meta information."
+msgstr "如果选中，则结果用元信息(Meta Information)包裹。"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_oauth2__state__implicit
+msgid "Implicit"
+msgstr "隐性的"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:0
+#, python-format
+msgid "Import Template for Custom Endpoints"
+msgstr "导入自定义端点的模板"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid ""
+"In case you want to create your own client, you can automatically generate "
+"one based on the API documentation.\n"
+"\t\t\t\t\tThe client is created by"
+msgstr ""
+"如果您想要创建您自己的客户端，您可以参考API文档自动生成一个客户端。\n"
+"\t\t\t\t\t客户端由"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "Inactive"
+msgstr "未启用"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Information"
+msgstr "信息"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/access_rules.py:0
+#, python-format
+msgid "Invalid Expression!"
+msgstr "无效表达式！"
+
+#. module: muk_rest
+#: code:addons/muk_rest/controllers/authentication.py:0
+#, python-format
+msgid "Invalid login or password!"
+msgstr "无效的用户名或密码！"
+
+#. module: muk_rest
+#: code:addons/muk_rest/controllers/docs.py:0
+#, python-format
+msgid "Invalid template name."
+msgstr "无效的模板名称。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__language
+msgid "Language"
+msgstr "语言"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token____last_update
+msgid "Last Modified on"
+msgstr "最后修改时间"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.docs_standalone
+msgid "Logo"
+msgstr "图标"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__model_id
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "Model"
+msgstr "模型"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__model_name
+msgid "Model Name"
+msgstr "模型(Model)名称"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__name
+msgid "Name"
+msgstr "名称"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__nonce
+msgid "Nonce"
+msgstr "随机码(Nonce)"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__oauth_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__oauth_id
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_authorization_code
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_request_token
+msgid "OAuth"
+msgstr "OAuth"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_res_users_form_preferences
+msgid "OAuth 1 Session"
+msgstr "OAuth 1 Session"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_res_config_settings__rest_oauth2_bearer_autovacuum_days
+msgid "OAuth 2 Autovacuum (in Days)"
+msgstr "OAuth 2 自清理(以天为单位)"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_res_config_settings__rest_oauth2_bearer_expires_in_seconds
+msgid "OAuth 2 Expires In (in Seconds)"
+msgstr "OAuth 2 失效时长（以秒为单位）"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_res_users_form_preferences
+msgid "OAuth 2 Session"
+msgstr "OAuth 2 Session"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "OAuth 2.0"
+msgstr "OAuth 2.0"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_oauth
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__oauth_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__oauth_id
+msgid "OAuth Configuration"
+msgstr "OAuth 配置"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "OAuth Logo"
+msgstr "OAuth 图标"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_res_users_form_preferences
+msgid "OAuth Session"
+msgstr "OAuth Session"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth
+msgid "OAuth Settings"
+msgstr "OAuth 设置"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__state
+msgid "OAuth Type"
+msgstr "Oauth 类型"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_oauth1
+#: model:ir.ui.menu,name:muk_rest.menu_rest_oauth1
+msgid "OAuth1"
+msgstr "OAuth1"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_access_token
+msgid "OAuth1 Access Token"
+msgstr "OAuth1 访问令牌(Access Token)"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_oauth1
+msgid "OAuth1 Configuration"
+msgstr "OAuth1 配置"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_request_token
+msgid "OAuth1 Request Token"
+msgstr "OAuth1 请求令牌(Request Token)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_request_data
+msgid "OAuth1 Restful API Requests"
+msgstr "OAuth1 Restful API 请求(Requests)"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_res_users__oauth1_session_ids
+msgid "OAuth1 Sessions"
+msgstr "OAuth1 Sessions"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_oauth2
+#: model:ir.ui.menu,name:muk_rest.menu_rest_oauth2
+msgid "OAuth2"
+msgstr "OAuth2"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_access_token
+msgid "OAuth2 Access Token"
+msgstr "OAuth2 访问令牌(Access Token)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_authorization_code
+#: model:ir.model,name:muk_rest.model_muk_rest_authorization_code
+msgid "OAuth2 Authorization Code"
+msgstr "OAuth2 授权码(Authorization Code)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_bearer_token
+#: model:ir.model,name:muk_rest.model_muk_rest_bearer_token
+msgid "OAuth2 Bearer Token"
+msgstr "OAuth2 匿名令牌(Bearer Token)"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_oauth2
+msgid "OAuth2 Configuration"
+msgstr "OAuth2 配置"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_request_token
+msgid "OAuth2 Request Token"
+msgstr "OAuth2 请求令牌(Request Token)"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_res_users__oauth2_session_ids
+msgid "OAuth2 Sessions"
+msgstr "OAuth2 Sessions"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__oauth1_ids
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__oauth1_ids
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__oauth1_ids
+msgid "Oauth1"
+msgstr "Oauth1"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__oauth2_ids
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__oauth2_ids
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__oauth2_ids
+msgid "Oauth2"
+msgstr "Oauth2"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__operation
+msgid "Operation"
+msgstr "操作"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__options
+msgid "Option Values"
+msgstr "选项值"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_client_generator__send_options
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid "Options"
+msgstr "选项"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_endpoint__method__post
+msgid "POST"
+msgstr "POST"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_endpoint__method__put
+msgid "PUT"
+msgstr "PUT"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__param
+msgid "Parameter"
+msgstr "参数(Parameter)"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_parameters
+msgid "Parameters"
+msgstr "参数(Parameters)"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:0
+#, python-format
+msgid ""
+"Parameters are not valid JSON\n"
+"\n"
+"{}"
+msgstr ""
+"参数必须是有效的JSON\n"
+"\n"
+"{}"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:0
+#, python-format
+msgid "Parameters need to be a list of objects."
+msgstr "参数必须是对象(Objects)的列表(List)。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Password"
+msgstr "密码(Password)"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_oauth2__state__password
+msgid "Password Credentials"
+msgstr "密码凭据(Password Credentials)"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Privacy policy"
+msgstr "隐私政策"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__privacy_policy
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__privacy_policy
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__privacy_policy
+msgid "Privacy policy URL"
+msgstr "隐私政策的URL"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__logo_url
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__logo_url
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__logo_url
+msgid "Product logo URL"
+msgstr "产品图标URL"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_callback
+msgid "Protect the Restful API from requests from unknown sources."
+msgstr "使Restful API免受来自未知源的请求。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__protected
+msgid "Protected"
+msgstr "受保护"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__code
+msgid "Python code that is called by the endpoint."
+msgstr "由端点调用的 Python 代码。"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_request_data
+msgid "Request"
+msgstr "请求(Request)"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_request_data
+#: model:ir.ui.menu,name:muk_rest.menu_rest_request_data
+msgid "Request Data"
+msgstr "请求数据(Request Data)"
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_request_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_request_token_form
+msgid "Request Token"
+msgstr "请求令牌(Request Token)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_request_token
+msgid "Request Token are used to authenticate a user with the server."
+msgstr "请求令牌(Request Token)用于通过服务器对用户进行身份验证。"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.menu_rest_request_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_request_token_tree
+msgid "Request Tokens"
+msgstr "请求令牌(Request Tokens)"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_request_data_tree
+msgid "Requests"
+msgstr "请求(Requests)"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_request_data
+msgid "Requests made to the Restful API."
+msgstr "向Restful API 发出的请求(Requests)。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid "Requests-OAuthlib"
+msgstr "Requests-OAuthlib"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid "Requests: HTTP for Humans"
+msgstr "Requests: HTTP for Humans"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_responses
+msgid "Responses"
+msgstr "响应(Responses)"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:0
+#, python-format
+msgid ""
+"Responses are not valid JSON\n"
+"\n"
+"{}"
+msgstr ""
+"响应必须是有效的JSON\n"
+"\n"
+"{}"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:0
+#, python-format
+msgid "Responses need to be a map of status codes."
+msgstr "响应必须是状态代码(Status Code)的映射。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Restore"
+msgstr "还原"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__route
+msgid "Route"
+msgstr "路由"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__route_selection
+msgid "Route Selection"
+msgstr "路线选择"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__rule
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules_expression__rule_id
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_rules_form
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Rule"
+msgstr "规则"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_rules_tree
+msgid "Rules"
+msgstr "规则"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__security
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__security
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__security
+msgid "Security"
+msgstr "安全"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_rules__sequence
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__action_id
+msgid "Server Actions"
+msgstr "服务器操作(Server Actions)"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth.py:0
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__sessions
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__sessions
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__sessions
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+#, python-format
+msgid "Sessions"
+msgstr "会话(Sessions)"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "Set a security group to restrict the access to the docs."
+msgstr "设置安全组以限制文档的访问权限。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.res_config_settings_view_form
+msgid "Set the configruation values for the bearer token."
+msgstr "对匿名令牌(Bearer Token)进行配置。"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth.py:0
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+#, python-format
+msgid "Settings"
+msgstr "设置"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__eval_sudo
+msgid "Sudo Evaluation"
+msgstr "Sudo Evaluation"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__docs_summary
+msgid "Summary"
+msgstr "摘要"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid "Swagger CodeGen"
+msgstr "Swagger CodeGen创建"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.cat_menu_rest_technical
+msgid "Technical"
+msgstr "技术"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Terms of service"
+msgstr "服务条款"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__service_terms
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__service_terms
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__service_terms
+msgid "Terms of service URL"
+msgstr "服务条款URL"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid ""
+"The available resources have been restricted. The following\n"
+"\t\t\t\t\t\t    \troutes can be accessed via the Restful interface:"
+msgstr ""
+"可用资源已受到限制。仅以下路由可以通过 Restful \n"
+"\t\t\t\t\t\t    \t接口访问："
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth1.py:0
+#, python-format
+msgid "The consumer key must be between 20 and 50 characters long."
+msgstr "消费者密钥(Consumer Key)必须介于 20 到 50 个字符之间。"
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth1.py:0
+#, python-format
+msgid "The consumer secret must be between 20 and 50 characters long."
+msgstr "消费者密钥(Consumer Secret)必须介于 20 到 50 个字符之间。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "The following variables can be used:"
+msgstr "可以使用以下变量："
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_access_rules__route
+msgid "The route value can be a regular expression."
+msgstr "路由值可以是正则表达式。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "There a multiple ways to return a response:"
+msgstr "有多种方法可以返回响应(Response)："
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid ""
+"There are excellent clients in almost every programming language. For "
+"example, in Python there is"
+msgstr "几乎每一种编程语言都有优秀的客户端。例如，在 Python 中"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__timestamp
+msgid "Timestamp"
+msgstr "时间戳(Timestamp)"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"To return a content, assign <code>content = ...</code> The content is "
+"parsed to a json response."
+msgstr ""
+"若要返回内容(Content)， 可使用<code>content = ...</code> 内容将被转码为 "
+"json 响应(Response)。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"To return a result, assign <code>result = {...}</code> The result is "
+"wrapped into a response."
+msgstr ""
+"若要返回结果(Result)， 可使用<code>result = {...}</code> 结果将被包装到响应"
+"(Response)中。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid ""
+"To set custom response, assign <code>response = [...]</code> The response "
+"is directly returned by the endpoint."
+msgstr ""
+"若要设置自定义响应 <code>response = [...]</code> ，端点会将响应(Response)直"
+"接返回。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_data__token_hash
+msgid "Token"
+msgstr "令牌(Token)"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.cat_menu_rest_tokens
+msgid "Tokens"
+msgstr "令牌(Tokens)"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "Type"
+msgstr "类型"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__state
+msgid ""
+"Type of the endpoint. The following values are available:\n"
+"- Evaluate Domain: A domain that is evaluated on the model.\n"
+"- Execute a Server Action: A server action that is run.\n"
+"- Execute Python Code: A block of Python code that will be executed.\n"
+msgstr ""
+"端点的类型。有以下值可用：\n"
+"- 评估域条件(Domain)：在模型上评估的域条件(Domain)。\n"
+"- 执行服务器操作(Server Action)：执行的服务器操作。\n"
+"- 执行 Python 代码：可执行的 Python 代码。\n"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__user_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__user_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__user_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__user_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__user_id
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_authorization_code
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_request_token
+msgid "User"
+msgstr "用户"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_res_users
+msgid "Users"
+msgstr "用户"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_error
+msgid "We're sorry, but something unexpected happened.."
+msgstr "很抱歉， 发生了一些意想不到的事情。"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__active
+msgid ""
+"When unchecked, the endpoint is inactive and will not be available through "
+"the API."
+msgstr "如果未选中，端点将处于非活动状态，并且无法通过 API 使用。"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__protected
+msgid ""
+"When unchecked, the endpoint is protected and only users with valid "
+"credentials can use it."
+msgstr ""
+"如果未选中，端点将受到保护，只有具有有效凭据(Credential)的用户才能使用它。"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__wrap_response
+msgid "Wrap Response"
+msgstr "Wrap Response"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid ""
+"and is only meant as a starting point to create your own. Select a "
+"programming language and activate the options in\n"
+"\t\t\t\t\tcase you want to customize the client generation further. The "
+"client might not be useable out of the box and must\n"
+"\t\t\t\t\tbe further developed to fulfill all your requirements."
+msgstr ""
+"并且只是作为创建您自己的起点。选择编程语言并激活\n"
+"\t\t\t\t\t以防您要进一步自定义客户端生成。客户端可能无法使用开箱即用，并且必"
+"须\n"
+"\t\t\t\t\t进一步开发，以满足您的所有要求。"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_access_rules_expression__operation__%
+msgid "contains"
+msgstr "包含"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_access_rules_expression__operation__!%
+msgid "doesn't contains"
+msgstr "不包含"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "e.g. Action Endpoint"
+msgstr "例如 Action Endpoint"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "e.g. MyApp"
+msgstr "例如 MyApp"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "e.g. contacts"
+msgstr "例如 contacts"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "http://www.example.com"
+msgstr "http://www.example.com"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_access_rules_expression__operation__=
+msgid "is equal to"
+msgstr "等价于"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_access_rules_expression__operation__!
+msgid "is forbidden"
+msgstr "禁止"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_access_rules_expression__operation__!=
+msgid "is not equal to"
+msgstr "不等价于"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_access_rules_expression__operation__-
+msgid "is required"
+msgstr "必填"
+
+#. module: muk_rest
+#: model:ir.model.fields.selection,name:muk_rest.selection__muk_rest_access_rules_expression__operation__#
+msgid "match against"
+msgstr "匹配"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid ""
+"to authenticate\n"
+"\t\t\t\t\twith OAuth, to name just one as an example."
+msgstr ""
+"使用 OAuth 进行身份验证\n"
+"\t\t\t\t\t举一个例子。"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_client_form
+msgid "to make requests and"
+msgstr "发出请求(Request)并"
