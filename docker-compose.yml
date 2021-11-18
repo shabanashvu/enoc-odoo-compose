@@ -14,23 +14,19 @@ services:
   odoo14:
     image: odoo:14
     user: root
- #   depends_on:
- #     - db
     ports:
       - "10014:8069"
       - "20014:8072" # live chat
     tty: true
     command: --
-#    command: odoo scaffold /mnt/extra-addons/custom_module
+
     environment:
       - HOST=172.104.55.52
       - USER=shabz
       - PASSWORD=Eshaanchoot1
     volumes:
-      #- /etc/timezone:/etc/timezone:ro
-      #- /etc/localtime:/etc/localtime:ro
-      - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
+      - ./entrypoint.sh:/entrypoint.sh  
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
-    restart: always             # run as a service
+    restart: always 
     
