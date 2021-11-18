@@ -11,6 +11,9 @@ set -e
 
 # install python packages
 pip3 install pyzk
+pip3 install oauthlib
+pip3 install requests 
+pip3 install requests_oauthlib 
 pip3 install pip --upgrade
 pip3 install -r /etc/odoo/requirements.txt
 
