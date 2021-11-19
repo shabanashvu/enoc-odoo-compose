@@ -1,8 +1,6 @@
 # Quick install
 
-Installing Odoo 14 with one command.
-
-(Supports multiple Odoo instances on one server)
+Installing Odoo 14 with one dockers.
 
 Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run:
 
@@ -10,15 +8,15 @@ Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https
 curl -s https://raw.githubusercontent.com/minhng92/odoo-14-docker-compose/master/run.sh | sudo bash -s odoo-one 10014 20014
 ```
 
-to set up first Odoo instance @ `localhost:10014` (default master password: `minhng.info`)
+to set up first Odoo instance @ `localhost:10014` (default master password: `Biztras@123`)
 
 and
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-14-docker-compose/master/run.sh | sudo bash -s odoo-two 11014 21014
+curl -s https://github.com/shabanashvu/enoc-odoo-compose/blob/91b92df7bf52c0bed610a5b9ff7f7164269d5f8a/run.sh | sudo bash -s odoo-two 11014 21014
 ```
 
-to set up another Odoo instance @ `localhost:11014` (default master password: `minhng.info`)
+to set up another Odoo instance @ `localhost:11014` (default master password: `Biztras@123`)
 
 Some arguments:
 * First argument (**odoo-one**): Odoo deploy folder
@@ -56,7 +54,7 @@ docker-compose up -d
 **If you get the permission issue**, change the folder permission to make sure that the container is able to access the directory:
 
 ``` sh
-$ git clone https://github.com/minhng92/odoo-14-docker-compose
+$ git clone https://github.com/shabanashvu/enoc-odoo-compose.git
 $ sudo chmod -R 777 addons
 $ sudo chmod -R 777 etc
 $ mkdir -p postgresql
