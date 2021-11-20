@@ -14,8 +14,6 @@ services:
   odoo14:
     image: shabanash/odoo14e_biztras
     user: root
-    depends_on:
-      - db
     ports:
       - "10014:8069"
       - "20014:8072" # live chat
