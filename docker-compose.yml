@@ -21,9 +21,9 @@ services:
     command: --
 #    command: odoo scaffold /mnt/extra-addons/custom_module
     environment:
-      - HOST=db
-      - USER=odoo
-      - PASSWORD=odoo
+      - HOST=172.104.160.253
+      - USER=shabz
+      - PASSWORD=Eshaanchoot1
     volumes:
       #- /etc/timezone:/etc/timezone:ro
       #- /etc/localtime:/etc/localtime:ro
