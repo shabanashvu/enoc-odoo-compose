@@ -8,7 +8,6 @@ services:
       - "20014:8072" # live chat
     tty: true
     command: --
-#    command: odoo scaffold /mnt/extra-addons/custom_module
     environment:
       - HOST=172.104.160.253
       - USER=shabz
