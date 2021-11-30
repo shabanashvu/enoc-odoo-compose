@@ -9,9 +9,9 @@ services:
     tty: true
     command: --
     environment:
-      - HOST=10.55.0.3
+      - HOST=
       - USER=odoo
-      - PASSWORD=CargoMate@123
+      - PASSWORD=
     volumes:
       #- /etc/timezone:/etc/timezone:ro
       #- /etc/localtime:/etc/localtime:ro
