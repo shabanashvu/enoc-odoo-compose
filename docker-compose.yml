@@ -9,13 +9,13 @@ services:
     tty: true
     command: --
     environment:
-      - HOST=172.104.160.253
-      - USER=shabz
-      - PASSWORD=Eshaanchoot1
+      - HOST=10.55.0.3
+      - USER=odoo
+      - PASSWORD=CargoMate@123
     volumes:
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-      - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
+      #- /etc/timezone:/etc/timezone:ro
+      #- /etc/localtime:/etc/localtime:ro
+      #- ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
     restart: always             # run as a service
